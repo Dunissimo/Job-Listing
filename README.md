@@ -1,7 +1,5 @@
 # Frontend Mentor - Job listings with filtering
 
-![Design preview for the Job listings with filtering coding challenge](./design/desktop-preview.jpg)
-
 ## Welcome! 👋
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
