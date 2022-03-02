@@ -58,6 +58,9 @@ main {
   }
 
   .sidebar {
+    min-height: 0;
     padding: 30px 30px;
+
+    margin-bottom: 40px;
   }
 }
