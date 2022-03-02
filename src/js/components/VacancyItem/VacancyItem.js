@@ -5,6 +5,7 @@ import "./VacancyItem.css";
 const VacancyItem = ({ company, addFilter, dataLength }) => {
   const {
     id,
+    company: comp,
     logo,
     contract,
     postedAt,
@@ -14,19 +15,18 @@ const VacancyItem = ({ company, addFilter, dataLength }) => {
     level,
     role,
     tools,
+    new: neww,
+    featured: featuredd,
   } = company;
 
-  const neww = company.new ? <div className="new">NEW!</div> : null;
+  const isNew = neww ? <div className="new">NEW!</div> : null;
 
-  const featured = company.featured ? (
+  const isFeatured = featuredd ? (
     <div className="featured">FEATURED</div>
   ) : null;
 
   return (
-    <section
-      className={`vacancy-item ${company.featured ? "featured" : ""}`}
-      key={company.id}
-    >
+    <section className={`vacancy-item ${featuredd ? "featured" : ""}`} key={id}>
       <img
         className="vacancy-item__img"
         src={`./images/${logo.slice(9)}`}
@@ -34,9 +34,9 @@ const VacancyItem = ({ company, addFilter, dataLength }) => {
       />
       <div className="vacancy-item__top">
         <div className="vacancy-item__company-name-n-params">
-          <h2>{company.company}</h2>
-          {neww}
-          {featured}
+          <h2>{comp}</h2>
+          {isNew}
+          {isFeatured}
         </div>
         <h3>{position}</h3>
         <div className="vacancy-item__details">
@@ -54,16 +54,6 @@ const VacancyItem = ({ company, addFilter, dataLength }) => {
             <button
               key={lang}
               onClick={(e) => {
-                document
-                  .querySelector(".filters-panel")
-                  .classList.remove("hide");
-
-                document
-                  .querySelector(".filters-panel")
-                  .classList.add("active");
-
-                document.body.scrollTo(0, 0);
-
                 addFilter({
                   text: e.target.textContent,
                   id: `${id}${e.target.textContent}`,
