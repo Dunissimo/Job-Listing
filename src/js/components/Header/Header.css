@@ -4,6 +4,8 @@
 
   padding: 100px;
 
+  margin-bottom: 30px;
+
   background-color: hsl(180, 29%, 50%);
   background-image: url("../../../../public/images/bg-header-mobile.svg");
   background-repeat: no-repeat;
