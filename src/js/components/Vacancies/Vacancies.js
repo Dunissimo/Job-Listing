@@ -7,6 +7,7 @@ import VacancyItem from "../VacancyItem/VacancyItem";
 import "./Vacancies.css";
 
 const Vacancies = ({ filters, addFilter }) => {
+  console.log(data);
   const newData = Object.assign(data);
 
   let toRender = [];

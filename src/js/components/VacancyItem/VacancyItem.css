@@ -1,11 +1,10 @@
 .vacancy-item {
-  width: 90%;
+  width: 85%;
   height: auto;
 
   position: relative;
 
-  margin: 35px;
-  margin-top: 0;
+  margin: 35px auto;
   padding: 10px;
 
   background-color: hsl(180, 52%, 96%);

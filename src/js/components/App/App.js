@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import Header from "../Header/Header";
-import Sort from "../SideBar/Sort";
 import Vacancies from "../Vacancies/Vacancies";
 import FilterPanel from "../FilterPanel/FilterPanel";
 import Attr from "../Attr/Attr";
@@ -53,19 +52,14 @@ const App = () => {
     <div className="app">
       <Header />
 
-      <main>
-        <div className="sidebar">
-          <Sort />
-        </div>
-        <div className="content">
-          <FilterPanel
-            filters={filters}
-            className={className}
-            clearFilter={clearFilter}
-            clearAllFilters={clearAllFilters}
-          />
-          <Vacancies addFilter={addFilter} filters={filters} />
-        </div>
+      <main className="content">
+        <FilterPanel
+          filters={filters}
+          className={className}
+          clearFilter={clearFilter}
+          clearAllFilters={clearAllFilters}
+        />
+        <Vacancies addFilter={addFilter} filters={filters} />
       </main>
       <Attr />
     </div>
