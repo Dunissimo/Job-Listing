@@ -22,36 +22,27 @@ const App = () => {
       return;
     }
 
-    const newArr = [...filters, { filter }];
-
     document.body.scrollTo(0, 0);
 
-    setFilters(newArr);
+    setFilters([...filters, { filter }]);
     setClassName("active");
   };
 
-  const clearFilter = (id) => {
-    const newArr = filters.filter(({ filter: fill }) => fill.id !== id);
+  const clearFilter = (id) =>
+    setFilters(filters.filter(({ filter: fill }) => fill.id !== id));
 
-    setFilters(newArr);
-  };
-
-  const clearAllFilters = () => {
-    setFilters([]);
-  };
+  const clearAllFilters = () => setFilters([]);
 
   useEffect(() => {
     if (filters.length < 1) {
       setClassName("hide");
-
       return;
     }
   }, [filters]);
 
   return (
     <div className="app">
-      <Header />
-
+      <div className="header"></div>
       <main className="content">
         <FilterPanel
           filters={filters}

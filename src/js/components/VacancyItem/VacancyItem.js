@@ -16,17 +16,15 @@ const VacancyItem = ({ company, addFilter, dataLength }) => {
     role,
     tools,
     new: neww,
-    featured: featuredd,
+    featured,
   } = company;
 
   const isNew = neww ? <div className="new">NEW!</div> : null;
 
-  const isFeatured = featuredd ? (
-    <div className="featured">FEATURED</div>
-  ) : null;
+  const isFeatured = featured ? <div className="featured">FEATURED</div> : null;
 
   return (
-    <section className={`vacancy-item ${featuredd ? "featured" : ""}`} key={id}>
+    <section className={`vacancy-item ${featured ? "featured" : ""}`} key={id}>
       <img
         className="vacancy-item__img"
         src={`./images/${logo.slice(9)}`}

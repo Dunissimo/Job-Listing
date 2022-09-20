@@ -3,7 +3,7 @@ import React from "react";
 import "./FilterPanel.css";
 
 const FilterPanel = ({ filters, clearFilter, clearAllFilters, className }) => {
-  const arr = filters.map(({ filter }, id) => {
+  const filtersMapped = filters.map(({ filter }, id) => {
     return (
       <li key={id}>
         <h2>{filter.text}</h2>
@@ -21,7 +21,7 @@ const FilterPanel = ({ filters, clearFilter, clearAllFilters, className }) => {
   return (
     <div className={`filters-panel ${className}`}>
       <div className="filters-wrapper">
-        <ul className="filters">{arr}</ul>
+        <ul className="filters">{filtersMapped}</ul>
         <button className="clear" onClick={clearAllFilters}>
           Clear
         </button>

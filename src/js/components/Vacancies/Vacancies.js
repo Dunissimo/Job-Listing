@@ -7,15 +7,14 @@ import VacancyItem from "../VacancyItem/VacancyItem";
 import "./Vacancies.css";
 
 const Vacancies = ({ filters, addFilter }) => {
-  console.log(data);
   const newData = Object.assign(data);
 
-  let toRender = [];
-  let companiesToRender = [];
-  let params = [];
+  let toRender = [],
+    companiesToRender = [],
+    params = [];
 
-  newData.forEach((comp) => {
-    params = [...comp.languages, comp.level, comp.role, ...comp.tools];
+  newData.forEach(({ languages, level, role, tools }) => {
+    params = [...languages, level, role, ...tools];
 
     const isFiltersPassed = filters.every(({ filter }) =>
       params.includes(filter.text)
@@ -26,9 +25,7 @@ const Vacancies = ({ filters, addFilter }) => {
 
   // If there are no filters, then we carry out all the vacancies. (Если фильтров нет, то вывожу все вакансии.)
 
-  if (companiesToRender.length === 0) {
-    renderCompanies(newData);
-  }
+  if (companiesToRender.length === 0) renderCompanies(newData);
 
   renderCompanies(companiesToRender);
 
