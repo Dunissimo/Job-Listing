@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import Header from "../Header/Header";
 import Vacancies from "../Vacancies/Vacancies";
 import FilterPanel from "../FilterPanel/FilterPanel";
 import Attr from "../Attr/Attr";
