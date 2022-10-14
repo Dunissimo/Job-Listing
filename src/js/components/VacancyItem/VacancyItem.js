@@ -2,10 +2,10 @@ import React from "react";
 
 import "./VacancyItem.css";
 
-const VacancyItem = ({ company, addFilter }) => {
+const VacancyItem = ({ company:comp, addFilter }) => {
   const {
     id,
-    company: comp,
+    company,
     logo,
     contract,
     postedAt,
@@ -17,7 +17,7 @@ const VacancyItem = ({ company, addFilter }) => {
     tools,
     new: neww,
     featured
-  } = company;
+  } = comp;
 
   const isNew = neww ? <div className="new">NEW!</div> : null;
 
@@ -34,7 +34,7 @@ const VacancyItem = ({ company, addFilter }) => {
       />
       <div className="vacancy-item__top">
         <div className="vacancy-item__company-name-n-params">
-          <h2>{comp}</h2>
+          <h2>{company}</h2>
           {isNew}
           {isFeatured}
         </div>

@@ -13,14 +13,15 @@ const Vacancies = ({ filters, addFilter }) => {
     companiesToRender = [],
     params = [];
 
-  newData.forEach(({ languages, level, role, tools }) => {
+  newData.forEach((company) => {
+    const { languages, level, role, tools } = company;
     params = [...languages, level, role, ...tools];
 
     const isFiltersPassed = filters.every(({ filter }) =>
       params.includes(filter.text)
     );
 
-    if (isFiltersPassed) companiesToRender.push(comp);
+    if (isFiltersPassed) companiesToRender.push(company);
   });
 
   // If there are no filters, then we carry out all the vacancies. (Если фильтров нет, то вывожу все вакансии.)
@@ -30,12 +31,12 @@ const Vacancies = ({ filters, addFilter }) => {
   renderCompanies(companiesToRender);
 
   function renderCompanies(item) {
-    item.forEach((comp, id) => {
+    item.forEach((company, id) => {
       toRender.push(
         <VacancyItem
           key={id}
           dataLength={data.length}
-          company={comp}
+          company={company}
           addFilter={addFilter}
         />
       );
